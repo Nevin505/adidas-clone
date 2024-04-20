@@ -1,0 +1,22 @@
+/* .divtag{
+    padding-bottom: 1.4rem;
+}
+.ptag{
+    transition: all 150ms ease-in;
+}
+
+.divtag:hover .ptag{
+   bottom: 4.2rem;
+} */
+.scorllBar{     
+   scrollbar-width: none;
+   scroll-behavior: smooth;
+}
+/* .scorllBar::-webkit-scrollbar-track{     
+    background-color:  #ECEFF1;   
+}
+.scorllBar::-webkit-scrollbar-thumb{     
+    background-color: black; 
+   cursor: grab;
+
+} */

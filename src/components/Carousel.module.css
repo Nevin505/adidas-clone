@@ -1,0 +1,33 @@
+.divtag{
+    padding-bottom: 1.4rem;
+}
+.ptag{
+    transition: all 150ms ease-in;
+}
+
+.divtag:hover .ptag{
+   bottom: 4.2rem;
+}
+
+@supports(scrollbar-width:thin){
+    .scorllBar  {
+        scrollbar-width: thin;
+        scrollbar-color: black #ECEFF1;
+         cursor: pointer
+    }
+ 
+}
+
+.scorllBar::-webkit-scrollbar{     
+   height: 0.4rem;
+}
+.scorllBar::-webkit-scrollbar-track{     
+    background-color:  #ECEFF1;  
+    cursor: pointer; 
+}
+
+.scorllBar::-webkit-scrollbar-thumb{     
+    background-color: black; 
+     cursor: grab;
+}
+
