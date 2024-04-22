@@ -1,64 +1,75 @@
+import { useEffect, useState } from "react";
 import Row from "./Row";
 
+
+const subElements1 =["Footwear","Clothing","Accessories","Outlet – Sale New Arrivals Special Offer Flat 50% Off!"];
+const subElements2=["Cricket","Running","Football","Gym/Training","Tennis","Outdoor","Basketball","Swimming","Skateboarding"]
+const subElements3=["Ultraboost","Superstar","NMD","Stan Smith","Sustainability","Predator","Parley","adicolor"]
+const subElements4=["Help","Customer Services","Returns & Exchanges","Shipping","Order Tracker","Store Locator"," Running Shoe","adicolor","adiclub Terms and conditions"]
+const subElements5=["About Us","adidas stories","adidas Apps","Entity Details","Press","Careers"]
+
+const mobileScreenSubElements=["Delievery","Refunds $ Referrals","Order Tracker","Help","Store Finder","adiClub","terms and Condition"]
+
 const Footer = () => {
+
+  const [ismobileScreen, setIsmobileScreen] = useState(window.innerWidth <= 930);
+
+
+  useEffect(() => {
+    const handleResize = () => {
+      console.log("Resizing");
+      setIsmobileScreen(window.innerWidth <= 930); 
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
   return (
-    <div className="w-full px-8">
-      <Row>
-        <div >
-          <h1>PRODUCTS</h1>
-          <p>Footwear</p>
-          <p>Clothing</p>
-          <p>Accessories</p>
-          <p>Outlet – Sale New Arrivals Special Offer Flat 50% Off!</p>
+    <div className="w-4/5 pt-8 ">
+      <Row largeGap="true">
+        {!ismobileScreen ?<>
+          <div className="flex-1 ">
+          <h1 className="font-bold">PRODUCTS</h1>
+           {subElements1.map((element,index)=>{
+            return <p key={index} className="leading-7 text-sm">{element}</p>
+           })}
         </div>
-        <div>
-          <h1>SPORTS</h1>
-          <p>Cricket</p>
-          <p>Running</p>
-          <p>Football</p>
-          <p>Gym/Training </p>
-          <p>Tennis</p>
-          <p>Outdoor</p>
-          <p>Basketball</p>
-          <p>Basketball</p>
-          <p>Swimming</p>
-          <p>Skateboarding</p>
+        <div className="flex-1">
+          <h1  className="font-bold">SPORTS</h1>
+          {subElements2.map((element,index)=>{
+            return <p key={index} className="leading-7 text-sm">{element}</p>
+           })}
         </div>
-        <div>
-          <h1>COLLECTIONS</h1>
-          <p>Ultraboost</p>
-          <p>Superstar</p>
-          <p>NMD</p>
-          <p>Stan Smith </p>
-          <p>Sustainability</p>
-          <p>Predator</p>
-          <p>Parley</p>
-          <p>adicolor</p>
+        <div className="flex-1">
+          <h1  className="font-bold">COLLECTIONS</h1>
+          {subElements3.map((element,index)=>{
+            return <p key={index} className="leading-7 text-sm">{element}</p>
+           })}
         </div>
-        <div>
-          <h1>SUPPORT</h1>
-          <p>Help</p>
-          <p> Customer Services</p>
-          <p>Returns & Exchanges</p>
-          <p>Shipping </p>
-          <p>Order Tracker</p>
-          <p> Store Locator</p>
-          <p> Running Shoe</p>
-          <p>adicolor</p>
-          <p>adiclub Terms and conditions</p>
+        <div className="flex-1 basis-24">
+          <h1  className="font-bold">SUPPORT</h1>
+          {subElements4.map((element,index)=>{
+            return <p key={index} className="leading-7 text-sm">{element}</p>
+           })}
         </div>
-        <div>
-          <h1> COMPANY INFO</h1>
-          <p>About Us</p>
-          <p>adidas stories</p>
-          <p>adidas Apps</p>
-          <p>Entity Details</p>
-          <p>Press</p>
-          <p>Careers</p>
+        <div className="flex-1">
+          <h1  className="font-bold"> COMPANY INFO</h1>
+          {subElements5.map((element,index)=>{
+            return <p key={index} className="leading-7 text-sm">{element}</p>
+           })}
         </div>
-        <div>
-          <h1>FOLLOW US</h1>
+        <div className="flex-1">
+          <h1  className="font-bold">FOLLOW US</h1>
         </div>
+        </>:
+        <div className="grid grid-cols-2     gap-4">
+          {mobileScreenSubElements.map((element,index)=>{
+            return <p key={index} className="leading-7 text-sm text-black text-center border-2 border-black ">{element}</p>
+           })}
+          </div>}
       </Row>
     </div>
   );

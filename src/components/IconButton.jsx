@@ -1,7 +1,7 @@
 
 const IconButton = ({children,onClick}) => {
   return (
-    <div className="cursor-pointer" onClick={onClick}>
+    <div className="cursor-pointer block" onClick={onClick}>
       {children}
     </div>
   )

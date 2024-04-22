@@ -15,10 +15,14 @@ import { CAROUSREL_DATA } from "./lib/CarouselDta2";
 import { CAROUSREL_DATA_3 } from "./lib/CarouselData3";
 import Footer from "./components/Footer";
 function App() {
+  // const element=document.getElementById("divv");
+  // element.style.overflow='hidden'
+
+
   return (
     <div className="flex flex-col items-center ">
-      <NavBar />
-      <div className=" w-full mt  border-2 border-black">
+      <NavBar  />
+      <div className=" w-full mt  border-2 border-black" id="divv">
         <div className="w-full  border-2 border-red-500 relative">
           <picture>
             <source srcSet={adidasSmallLogo} media="(max-width:500px)" />
@@ -42,7 +46,8 @@ function App() {
                 EXPLORE MORE
                 <MdOutlineArrowRightAlt />
               </Button>
-              <Button varaiantType="contained">sign up </Button>
+              <Button varaiantType="contained">sign up
+              <MdOutlineArrowRightAlt /> </Button>
             </Row>
           </div>
         </div>
@@ -63,13 +68,14 @@ function App() {
       </div>
 
       <Carousel2 CAROUSREL_DATA={CAROUSREL_DATA} />
-      <Carousel2 CAROUSREL_DATA={CAROUSREL_DATA_3} />
+      <h1 className="font-bold text-start w-full text-xl px-4  py-8 md:px-16  md:text-3xl">WHAT'S HOT?</h1>
+      <Carousel2 CAROUSREL_DATA={CAROUSREL_DATA_3} /> 
 
       <div className="px-8 bg-yellow-100 py-12 md:px-14  lg:px-20">
         <Row>
-          <div className="flex-1 basis-96">
+          <div className="flex-1 basis-[28rem]">
             <h2 className="font-bold text-xl  sm:text-2xl md:text-3xl ">STORIES, STYLES AND SPORTSWEAR AT ADIDAS, SINCE 1949</h2>
-            <p className="pt-4 md:text-lg">
+            <p className="pt-4 md:text-[1.1rem]">
               Sport keeps us fit. Keeps you mindful. Brings us together. Through
               sport we have the power to change lives. Whether it is through
               stories of inspiring athletes. Helping you to get up and get
@@ -88,13 +94,13 @@ function App() {
               mind. We’re here to support creators. Improve their game. Create
               change. And we think about the impact we have on our world.
             </p>
-            <p  className="pt-4  md:text-lg">
+            <p  className="pt-4  md:text-[1.1rem]">
             adidas is about more than sportswear and workout clothes. We partner with the best in the industry to co-create. This way we offer our fans the sports apparel and style that match their athletic needs, while keeping sustainability in mind. We’re here to support creators. Improve their game. Create change. And we think about the impact we have on our world.
             </p>
           </div>
-          <div className="flex-1  basis-96">
+          <div className="flex-1  basis-[28rem]">
             <h2 className="font-bold text-xl  sm:text-2xl md:text-3xl"> WORKOUT CLOTHES, FOR ANY SPORT</h2>
-            <p   className="pt-4  md:text-lg">
+            <p   className="pt-4  md:text-[1.1rem]">
               adidas designs for and with athletes of all kinds. Creators, who
               love to change the game. Challenge conventions. Break the rules
               and define new ones. Then break them again. We supply teams and
@@ -115,7 +121,7 @@ function App() {
               Becoming more and more versatile. And adidas designs with that in
               mind.
             </p>
-            <p  className="pt-4  md:text-lg">
+            <p  className="pt-4  md:text-[1.1rem]">
            Through our collections we blur the borders between high fashion and high performance. Like our adidas by Stella McCartney athletic clothing collection – designed to look the part inside and outside of the gym. Or some of our adidas Originals lifestyle pieces, that can be worn as sportswear too. Our lives are constantly changing. Becoming more and more versatile. And adidas designs with that in mind.
 
 
@@ -123,8 +129,8 @@ function App() {
           </div>
         </Row>
       </div>
-      <div className="w-full  flex  flex-wrap justify-center items-center gap-4 bg-yellow-200 text-center p-10">
-      <h1 className="text-3xl"> JOIN ADIDAS AND GET 15% OFF</h1>
+      <div className="w-full  flex  flex-wrap justify-center items-center gap-4 bg-yellow-200 text-center p-8">
+      <h1 className="text-3xl font-bold"> JOIN ADIDAS AND GET 15% OFF</h1>
       <div className="  p-4 idd relative ">
         <button className="flex gap-4 items-center   px-4 py-1 bg-black text-white ">SIGN UP FOR FREE 
         <span className="leftbar">

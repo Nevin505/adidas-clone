@@ -1,0 +1,10 @@
+.listStyles:nth-child(n){
+    cursor: pointer;
+}
+.listStyles:nth-child(n+1) :nth-child(-n+3){
+    font-weight: bold;
+}
+.listStyles :nth-last-child(1){
+    font-weight: bold;
+    color: red;
+}

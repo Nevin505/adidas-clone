@@ -1,51 +1,49 @@
 import { useState, useEffect } from "react";
 
-import {
-  FaSearch,
-  FaShoppingCart,
-  FaRegHeart,
-  FaShoppingBag,
-  FaChevronDown
-} from "react-icons/fa";
+import {FaSearch,FaShoppingCart,FaRegHeart,FaShoppingBag} from "react-icons/fa";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { IoClose } from "react-icons/io5";
 
-// import BrandLogo from "../assets/adidasLogo.png";
 import IconButton from "./IconButton";
 
 import BrandLogo from "./BrandLogo";
-import Down from "./Down";
-import AnimationNavBar from "./AnimationNavBar";
+import AnimationNavBar from "./AnimationHeaderBanner";
 import NavCategory from "./NavCategory";
 
+import NavBarStyles from './NavBar.module.css';
 
-const mainNavListUpper=["help","orders and returns","sign up","log in"]
+const custonerInfo=["help","orders and returns","sign up","log in"]
 
 const sideNavList=["Men","Women","Kids","Sports","New","LifeStyle","Essentials","Summer Shop","Cricket","Outlet"];
 
+const mainNavListDatas=["Men","Women","Kids","New","Sport","LifeStyle","Outlet"]
+
+
+
 
 const NavBar = () => {
-
-    const [isDispayled, setIsDisplayed] = useState(false);
   
-    const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth < 905); // Example width threshold
+    const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth <= 930);
 
-    const[trigger,setTrigger]=useState(false);
-    
-    const [prevScrollPos, setPrevScrollPos] = useState(50);
+    // const [isSmallScreen, setIsSmallScreens] = useState({windowWidth:window.innerWidth < 905, 
+    //       isHamBurgerMenuDisplayed:false });
+   const[isHamBurgerMenuDisplayed,setIsHamBurgerMenuDisplayed]=useState(false);
 
-    const [visible, setVisible] = useState(true);
-
-    const[showCategory,setCategory]=useState(false);
   
+    // const [prevScrollPos, setPrevScrollPos] = useState(50);
 
-    // const[navBar,setNavBar]=useState();
-    
-     
-     trigger?document.body.style.overflow="hidden":document.body.style.overflow="auto";
+    // const [visible, setVisible] = useState(true);
+
+    // const[showCategory,setCategory]=useState(false);
+  
+   console.log(isSmallScreen,"Form Nav-Bar");
+   
 
     const showSideNavDisplayHandler = () => {
-       setIsDisplayed((prev) => !prev);
+      // setIsSmallScreens((prev)=>{
+      //   return {...prev,isHamBurgerMenuDisplayed:!prev.isHamBurgerMenuDisplayed}
+      // })
+      setIsHamBurgerMenuDisplayed((prev) => !prev);
     };
  
 
@@ -55,7 +53,7 @@ const NavBar = () => {
   useEffect(() => {
     const handleResize = () => {
       console.log("Resizing");
-      setIsSmallScreen(window.innerWidth < 905); 
+      setIsSmallScreen(window.innerWidth <= 930); 
     };
 
     window.addEventListener("resize", handleResize);
@@ -65,85 +63,63 @@ const NavBar = () => {
     };
   }, []);
 
-     useEffect(() => {
-       const handleScroll = () => {
-         const currentScrollPos = window.scrollY;
+    //  useEffect(() => {
+    //    const handleScroll = () => {
+    //      const currentScrollPos = window.scrollY;
    
-         setVisible(prevScrollPos > currentScrollPos || currentScrollPos < 168);
-         setPrevScrollPos(currentScrollPos);
-       };
+    //      setVisible(prevScrollPos > currentScrollPos || currentScrollPos < 168);
+    //      setPrevScrollPos(currentScrollPos);
+    //    };
    
-       window.addEventListener('scroll', handleScroll);
+    //    window.addEventListener('scroll', handleScroll);
    
-       return () => {
-         window.removeEventListener('scroll', handleScroll);
-       };
-     }, [prevScrollPos]);
+    //    return () => {
+    //      window.removeEventListener('scroll', handleScroll);
+    //    };
+    //  }, [prevScrollPos]);
 
-     const handleDisplayClick=()=>{
-        setTrigger(prev=>!prev)
-     }
 
-//    const handleCategoryList=(gender)=>{
-//         setCategory(true);
-//    }
 
-   const handleCategoryListNo=()=>{
-    setCategory(false);
-   }
 
   return (
     <>
-         {/* <div className={visible?"sticky w-full top-0  bg-white":" "}> */}
-         <div className="w-full   flex flex-col items-center bg-black text-white ">
-            <div className="flex gap-4 items-center " >
-                   <AnimationNavBar/>
-                   <FaChevronDown onClick={handleDisplayClick}/>
-            </div>
-            {trigger && <Down  onClick={handleDisplayClick}></Down>}
-               
-        </div>
-      {!isSmallScreen     ? 
+         <AnimationNavBar/>
+          {!isSmallScreen?
             <>
-                  <div className="w-full"><menu className="flex gap-2 justify-end px-10  `">
-                    {mainNavListUpper.map((list,index)=>{
-                           return  <li className="font-thin py-1" key={index}>{list}</li>
-                    })}
-                   </menu> </div>
-                      <nav className="flex justify-between w-full  border-2 border-red-700 px-10 ">
-                          <BrandLogo/>
-          <menu className="flex items-center gap-4 uppercase">
-            <li className="font-bold cursor-pointer" onMouseOver={()=>handleCategoryList("Men")} onMouseLeave={handleCategoryListNo}>Men</li>
-            <li className="font-bold cursor-pointer"  onMouseOver={()=>handleCategoryList("Women")} onMouseLeave={handleCategoryListNo}>Women</li>
-            <li className="font-bold cursor-pointer"  onMouseOver={()=>handleCategoryList("Kids")} onMouseLeave={handleCategoryListNo}>Kids</li>
-            <li className="cursor-pointer">New</li>
-            <li className="cursor-pointer">Sport</li>
-            <li className="cursor-pointer">LifeStyle</li>
-            <li className="font-bold text-red-600 cursor-pointer">Outlet</li>
-          </menu>
+              <div className="w-full">
+                <menu className="flex gap-2 justify-end px-10  `">
+                  {custonerInfo.map((list,index)=>(<li className="font-thin py-1 px-1 cursor-pointer hover:underline" key={index}>{list}</li>)
+                  )}
+                </menu>
+              </div>
 
-          <div className="flex items-center gap-1">
-            <div className="relative flex">
-              <input type="text" className="border-1 border-black px-2 py-1"  placeholder="Search" />
+           <nav className="flex justify-between w-full  border-2 border-red-700 px-10 ">
+                  <BrandLogo/>
+                  <menu className={`${NavBarStyles.listStyles} flex items-center gap-4 uppercase`}>
+                  { mainNavListDatas.map((listData,index)=><li key={index}>{listData}</li>)}
+                  </menu>
+
+          <div className="flex items-center gap-2">
+            <div className="relative flex ">
+              <input type="text" className="border-1 border-black px-2 py-1 bg-slate-200" placeholder="Search" />
               <FaSearch className="absolute right-1 top-2 " />
             </div>
-            <div className="flex items-center gap-6">
+            <div className="flex items-center gap-5">
                <IconButton>
                   <div className="relative">
                   <p className="bg-yellow-300 w-4 rounded-2xl text-center absolute -right-2 -top-5  "> 1</p>
-                  <FaShoppingCart size={24} />
+                  <FaShoppingCart size={20} />
                 </div>
               </IconButton>
-              <IconButton><FaRegHeart size={24} /></IconButton>
-              <IconButton><FaShoppingBag size={24} /> </IconButton>
+              <IconButton><FaRegHeart size={20} /></IconButton>
+              <IconButton><FaShoppingBag size={20} /> </IconButton>
             </div>
           </div>
         </nav>
-        {showCategory &&  <NavCategory/>}
         </>
        : 
         <nav className="w-full flex justify-between  px-4 py-2 ">
-          {!isDispayled ? 
+          {!isHamBurgerMenuDisplayed ?
             <>
               <div className="flex items-center gap-4">
                 <IconButton onClick={showSideNavDisplayHandler}>
@@ -165,12 +141,12 @@ const NavBar = () => {
             </>
            : 
             <div className="flex-1 transition-all duration-100">
-                <div className=" flex justify-center w-full items-center">
-                <BrandLogo/>
-            <IconButton className=" " onClick={showSideNavDisplayHandler} >
-                <IoClose size={24} />
-              </IconButton>
-          </div>
+                <div className=" flex justify-between items-center ">
+                   <BrandLogo/>
+                    <IconButton className="" onClick={showSideNavDisplayHandler} >
+                   <IoClose size={24} />
+                  </IconButton> 
+               </div>
 
               <menu className="flex flex-col gap-2 items-center">
                 {sideNavList.map((navList,index)=>{
