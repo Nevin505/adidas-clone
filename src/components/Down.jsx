@@ -1,5 +1,4 @@
 import { IoClose } from "react-icons/io5";
-import IconButton from "./IconButton";
 
 const Down = ({onClick}) => {
   

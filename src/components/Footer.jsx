@@ -10,27 +10,15 @@ const subElements5=["About Us","adidas stories","adidas Apps","Entity Details","
 
 const mobileScreenSubElements=["Delievery","Refunds $ Referrals","Order Tracker","Help","Store Finder","adiClub","terms and Condition"]
 
-const Footer = () => {
-
-  const [ismobileScreen, setIsmobileScreen] = useState(window.innerWidth <= 930);
+const Footer = ({isSmallScreen}) => {
 
 
-  useEffect(() => {
-    const handleResize = () => {
-      console.log("Resizing");
-      setIsmobileScreen(window.innerWidth <= 930); 
-    };
-
-    window.addEventListener("resize", handleResize);
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
   return (
-    <div className="w-4/5 pt-8 ">
+    <>
+    
+    {!isSmallScreen ?
+          <div className="w-4/5 pt-8 ">
       <Row largeGap="true">
-        {!ismobileScreen ?<>
           <div className="flex-1 ">
           <h1 className="font-bold">PRODUCTS</h1>
            {subElements1.map((element,index)=>{
@@ -64,14 +52,15 @@ const Footer = () => {
         <div className="flex-1">
           <h1  className="font-bold">FOLLOW US</h1>
         </div>
-        </>:
-        <div className="grid grid-cols-2     gap-4">
+        </Row>
+        </div>:
+        <div className=" w-full grid grid-cols-2  gap-4 bg-black text-white pt-8">
           {mobileScreenSubElements.map((element,index)=>{
-            return <p key={index} className="leading-7 text-sm text-black text-center border-2 border-black ">{element}</p>
+            return <p key={index} className="leading-7 text-sm  text-center  ">{element}</p>
            })}
           </div>}
-      </Row>
-    </div>
+    </>
+    
   );
 };
 

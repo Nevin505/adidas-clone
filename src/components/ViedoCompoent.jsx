@@ -1,7 +1,7 @@
 import { useRef, useState } from 'react'
-import  AdidasLargeScreenViedo from '../assets/AdidasLargeViedo.mp4'
-import  AdidasMediumScreenViedo from '../assets/AdidasMediumViedo.mp4'
-import  AdidasSmallScreenViedo from '../assets/AdidasSmallScreen.mp4'
+import  AdidasLargeScreenViedo from '../assets/ViedoAssets/AdidasLargeViedo.mp4'
+import  AdidasMediumScreenViedo from '../assets/ViedoAssets/AdidasMediumViedo.mp4'
+import  AdidasSmallScreenViedo from '../assets/ViedoAssets/AdidasSmallScreen.mp4'
 import Button from './Button'
 import { MdOutlineArrowRightAlt } from "react-icons/md";
 import { FaRegPlayCircle,FaPauseCircle } from "react-icons/fa";

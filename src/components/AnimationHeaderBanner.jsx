@@ -12,7 +12,6 @@ const AnimationHeaderBanner = () => {
 
     const[displayPanel,setDisplayPanel]=useState(false);
 
-
     useEffect(()=>{
         console.log("Setting time out");
          let arrayLength=aniamtedContent.length;
@@ -27,14 +26,10 @@ const AnimationHeaderBanner = () => {
     
       },[])
 
-
       const handleDisplayClick=()=>{
         setDisplayPanel(prev=>!prev)
      }
-
-
      displayPanel?document.body.style.overflow="hidden":document.body.style.overflow="auto";
-
   return (
     
          <>

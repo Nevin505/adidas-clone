@@ -1,0 +1,7 @@
+.ptag{
+    transition: all 140ms ease-in;
+}
+
+.divtag:hover .ptag{
+   bottom: 0.8rem;
+}
