@@ -18,37 +18,37 @@ import photosmall5 from '../assets/ScrollBar-3/image-small-5.png';
 
 export const CAROUSREL_DATA_3=[{
     id:1, 
-    heading:"2024 Boston Marathon® Winner",
+    title:"2024 Boston Marathon® Winner",
     mediumImage:photomedium1,
     smallImage:photosmall1,
-    paragraph:"Sisay Lemma redefined fast with Adizero."
+    titleSummary:"Sisay Lemma redefined fast with Adizero."
 },
 {
     id:2, 
     mediumImage:photomedium2,
     smallImage:photosmall2,
-    heading:"adidas Essentials",
-    paragraph:"Essential comfort for active lifestyle!"
+    title:"adidas Essentials",
+    titleSummary:"Essential comfort for active lifestyle!"
 },
 {
     id:3, 
     mediumImage:photomedium3,
     smallImage:photosmall3,
-    heading:"Hiit it your way",
-    paragraph:"A HIIT collection designed to help you nail every workout."
+    title:"Hiit it your way",
+    titleSummary:"A HIIT collection designed to help you nail every workout."
 },
 {
     id:4, 
     mediumImage:photomedium4,
     smallImage:photosmall4,
-    heading:"Fear of God Athletics",
-    paragraph:"Available Now"
+    title:"Fear of God Athletics",
+    titleSummary:"Available Now"
 },
 {
     id:5, 
     mediumImage:photomedium5,
     smallImage:photosmall5,
-    heading:"adidas SPZL",
-    paragraph:"adidas SPZL, a decade on: the 10th anniversary collection featuring Ashley Walters."
+    title:"adidas SPZL",
+    titleSummary:"adidas SPZL, a decade on: the 10th anniversary collection featuring Ashley Walters."
 }
 ]

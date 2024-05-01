@@ -41,14 +41,14 @@ const CommonCarousel = ({ children, showControls = "scrollBar" }) => {
 
       {showControlButtons && (
         <>
-          <div className="absolute left-2 top-56 hidden md:block">
+          <div className="absolute left-2 top-44 hidden md:block">
             <BsArrowLeftSquare
               className="   bg-white"
               size={40}
               onClick={handleScrollLeftSide}
             />
           </div>
-          <div className="absolute right-2 top-56 hidden md:block">
+          <div className="absolute right-2 top-44 hidden md:block">
             <BsArrowRightSquare
               className="   bg-white"
               size={40}

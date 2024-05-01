@@ -1,7 +1,7 @@
 const CarouselCardOffers = ({offer}) => {
     return (
       <div className="w-full flex flex-col gap-2">
-      <div className={` min-w-64  md:min-w-64 relative  flex flex-col  `}>
+      <div className={` min-w-64  md:min-w-72 relative  flex flex-col  `}>
         {/* to Select Picture Based on the Screen Size */}
           <picture>
               <source srcSet={offer?.smallImage} media="(min-width:601px)"/>

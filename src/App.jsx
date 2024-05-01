@@ -20,8 +20,7 @@ import CarouselCardOffers from "./components/CarouselCardOffers";
 import { CarouselData1 } from "./lib/CarouselData1";
 
 function App() {
-  // const element=document.getElementById("divv");
-  // element.style.overflow='hidden'
+
 
   const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth <= 930);
 
@@ -46,8 +45,8 @@ function App() {
   return (
     <div className="flex flex-col items-center ">
       <NavBar isSmallScreen={isSmallScreen} />
-      <div className=" w-full mt  border-2 border-black" id="divv">
-        <div className="w-full  border-2 border-red-500 relative">
+      <div className=" w-full" id="divv">
+        <div className="w-full  relative">
           <picture>
             <source srcSet={adidasSmallLogo} media="(max-width:500px)" />
             <source srcSet={adidasMediumLogo} media="(max-width:750px)" />

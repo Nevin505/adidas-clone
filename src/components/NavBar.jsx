@@ -82,7 +82,7 @@ const NavBar = ({isSmallScreen}) => {
                 </menu>
               </div>
 
-             <nav className="flex justify-between w-full  border-2 border-red-700 px-10 ">
+             <nav className="flex justify-between w-full px-10 ">
                   <BrandLogo/>
                   <menu className={`${NavBarStyles.listStyles} flex items-center  gap-4 uppercase`}>
                      { mainNavListDatas.map((listData,index)=><li key={index}>{listData}</li>)}
